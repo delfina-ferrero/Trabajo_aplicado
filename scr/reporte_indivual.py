@@ -5,6 +5,13 @@ Created on Wed Jun  3 13:51:49 2026
 
 @author: catalinabellomo
 """
+#Tenemos 4 fucniones:
+ #ingresar_datos_usuario() ---> Le pregunta al usuario sus 6 datos uno por uno y los valida. Devuelve un diccionario con esos valores.
+ #comparar_con_dataset(usuario, df) —->  recibe ese diccionario y el dataset. Calcula los promedios del dataset y compara cada valor del usuario contra esos promedios. Devuelve otro diccionario diciendo si cada variable está "arriba" o "abajo" del promedio.
+
+
+
+
 
 def ingresar_datos_usuario():
     """
@@ -90,3 +97,5 @@ def ingresar_datos_usuario():
  
     print("\nDatos registrados correctamente.")
     return usuario
+
+
