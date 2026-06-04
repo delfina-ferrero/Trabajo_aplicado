@@ -5,7 +5,7 @@ Created on Wed Jun  3 20:15:19 2026
 
 @author: catalinabellomo
 """
-
+# ARCHIVO PARA PORBAR FUNCIONES POR SEPARADO 
 from carga_datos import cargar_dataset
 from reporte_usuario import ingresar_datos_usuario, comparar_con_dataset, graficar_reporte_individual
 
