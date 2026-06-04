@@ -50,6 +50,31 @@ def detectar_riesgo(df):
 
 #%%
 def evaluar_condicion(df, condicion):
+    '''
+    Filtra el dataset de estudiantes segun un unico criterio de riesgo especifico.
+    Permite aislar y analizar independientemente las subpoblaciones de estudiantes
+    que se encuentran en situaciones criticas en base a una variable seleccionada
+    por el usuario o el sistema interactivo. Limpia el texto de entrada para prevenir
+    fallos por mayusculas o espacios extra
+    
+    Parameters
+    ----------
+    df : pandas: DataFrame
+        El DataFrame original cargado desde el archivo CSV que contiene los datos
+        de todos los estudiantes.
+    condicion : str
+        El nombre del factor de riesgo a evaluar. Opciones validas: 'rendimiento', 
+        'sueño', 'estudio', 'asistencia', 'motivacion'.
+        
+
+    Returns
+    -------
+    df_filtrado: pandas: DataFrame
+        Un DataFrame filtrado que contiene unicamente a los estudiantes que cumplen
+        con la condicion elegida. Devuelve None si el texto ingresado en 'condicion'
+        no coincide con ninguna opcion valida.
+
+    '''
     condicion = condicion.lower().strip()
     
     #Aca la funcion va a usar condiciones para sabr que criterios aplicar:
@@ -81,6 +106,23 @@ def evaluar_condicion(df, condicion):
 
 #%%
 def mostrar_reporte_riesgo(df):
+    '''
+    Genera y muestra en consola un reporte detallado del riesgo individual por variable.
+    Calcula la cantidad exacta de estudiantes que se ven afectados por cada uno de los 5
+    factores de riesgo de forma independiente. Ademas de imprimir los conteos, identifica
+    de manera automatizada cual es la problematica mas critica en toda la poblacion y 
+    concluye con una breve sugerencia o interpretacion pedagogica. 
+
+    Parameters
+    ----------
+    df : pandas: DataFrame
+        El DataFrame general de los estudiantes sobre el cual se contabilizaran las alertas individuales.
+
+    Returns
+    -------
+    None.
+
+    '''
     cant_rendimiento = len(df[df['Exam_Score'] < 60])
     cant_sueno = len(df[df['Sleep_Hours'] < 6])
     cant_estudio = len(df[df['Hours_Studied'] < 10])
