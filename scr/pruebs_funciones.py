@@ -5,26 +5,29 @@ Created on Wed Jun  3 20:15:19 2026
 
 @author: catalinabellomo
 """
-# ARCHIVO PARA PORBAR FUNCIONES POR SEPARADO 
-from carga_datos import cargar_dataset
-from reporte_usuario import ingresar_datos_usuario, comparar_con_dataset, graficar_reporte_individual
 
-# 1. Cargar el dataset
-df = cargar_dataset("datos/StudentPerformanceFactors.csv")
+from  reporte_indivual import ingresar_datos_usuario
 
-# 2. Simular un usuario con datos fijos (sin tener que escribirlos cada vez)
-usuario_prueba = {
-    "Hours_Studied": 10,
-    "Sleep_Hours": 5,
-    "Attendance": 70,
-    "Motivation_Level": "Low",
-    "Tutoring_Sessions": 1,
-    "Exam_Score": 55
-}
+usuario = ingresar_datos_usuario()
+print(usuario)
 
-# 3. Probar comparar_con_dataset
-comparaciones = comparar_con_dataset(usuario_prueba, df)
-print(comparaciones)
+from reporte_indivual import comparar_con_dataset
+import pandas as pd
 
-# 4. Probar el gráfico
-graficar_reporte_individual(usuario_prueba, df)
+df = pd.read_csv("/Users/catalinabellomo/Documents/GitHub/Trabajo_aplicado/datos/StudentPerformanceFactors.csv")
+
+comparaciones = comparar_con_dataset(usuario, df)
+
+for variable, resultado in comparaciones.items():
+    print(f"{variable}: vos = {resultado['valor_usuario']} | promedio = {resultado['promedio']} | {resultado['estado']}")
+    
+    
+from reporte_indivual import graficar_reporte_individual
+
+graficar_reporte_individual(usuario, df)
+
+
+from  reporte_indivual import evaluar_riesgo_usuario
+
+evaluar_riesgo_usuario(usuario)
+
