@@ -5,51 +5,55 @@ Created on Mon Jun  8 15:27:10 2026
 @author: Delfina
 """
 
-import os
 import pandas as pd
+from riesgo import evaluar_condicion, detectar_riesgo, mostrar_reporte_riesgo
 
-# 1. Importamos las funciones de tu módulo 'riesgo.py'
-try:
-    from scr import riesgo
-    print("¡Módulo 'riesgo.py' importado correctamente!")
-except ImportError:
-    print("Error: No se encontró el archivo 'riesgo.py' en el mismo directorio.")
-
-# 2. Definimos la ruta del dataset (respetando la estructura de carpetas acordada)
-ruta_dataset = os.path.join("datos", "StudentPerformanceFactors.csv")
-
-# 3. Lógica de carga y validación básica
-if not os.path.exists(ruta_dataset):
-    print(f"Error: No se encontró el archivo en la ruta especificada: '{ruta_dataset}'")
-    print("Por favor, verifica que la carpeta 'datos' exista y contenga el archivo CSV.")
-else:
-    print(f"Cargando el dataset desde: '{ruta_dataset}'...")
+if __name__ == "__main__":
+    # Definimos la ruta relativa exacta:
+    # '..' sale de 'src' a 'trabajo_aplicado' y luego ingresa a 'datos'
+    ruta_dataset = "../datos/StudentPerformanceFactors.csv"
     
-    # Cargamos el DataFrame con Pandas
-    df = pd.read_csv(ruta_dataset)
-    print(f"Dataset cargado con éxito. Cantidad de registros: {len(df)}")
+    print("Iniciando el módulo de riesgo académico...")
+    print(f"Buscando el dataset en la ruta relativa: '{ruta_dataset}'...\n")
     
-    print("\n" + "="*60)
-    print(" EJECUTANDO INVOCACIÓN DE TUS FUNCIONES DEL MÓDULO RIESGO")
-    print("="*60 + "\n")
-    
-    # --- PRUEBA 1: mostrar_reporte_riesgo(df) ---
-    # Esta función ya llama internamente a detectar_riesgo() y evaluar_condicion()
-    # mostrando todo el procesamiento por consola de forma limpia.
-    riesgo.mostrar_reporte_riesgo(df)
-    
-    
-    # --- PRUEBA 2: Uso manual de detectar_riesgo(df) ---
-    # Si quisieras capturar el DataFrame modificado para usarlo en otro módulo:
-    df_procesado = riesgo.detectar_riesgo(df)
-    
-    # Mostramos una vista previa de estudiantes clasificados en riesgo para verificar
-    print("\nVista previa de estudiantes en situación de riesgo detectados:")
-    estudiantes_riesgo_ejemplo = df_procesado[df_procesado['perfil_riesgo'] == True].head(3)
-    
-    # Seleccionamos las columnas clave para que la previsualización en la consola sea legible
-    columnas_clave = ['Hours_Studied', 'Sleep_Hours', 'Attendance', 'Motivation_Level', 'Exam_Score', 'perfil_riesgo']
-    print(estudiantes_riesgo_ejemplo[columnas_clave])
-    
-    print("\nPrueba finalizada con éxito. ¡Todo listo para integrar en el main.py!")
-    
+    try:
+        # Cargar el dataset utilizando la ruta relativa correcta para GitHub
+        df_original = pd.read_csv(ruta_dataset)
+        print("¡Dataset cargado con éxito desde la carpeta 'datos'!\n")
+        
+        # ---------------------------------------------------------------------
+        # PRUEBA 1: Invocación de 'mostrar_reporte_riesgo(df)'
+        # ---------------------------------------------------------------------
+        print(" Ejecutando Función: mostrar_reporte_riesgo")
+        mostrar_reporte_riesgo(df_original)
+        print("\n" + "="*60 + "\n")
+        
+        # ---------------------------------------------------------------------
+        # PRUEBA 2: Invocación de 'evaluar_condicion(df, condicion)'
+        # ---------------------------------------------------------------------
+        print(" Ejecutando Función: evaluar_condicion")
+        condicion_a_probar = 'Attendance'
+        df_solo_asistencia = evaluar_condicion(df_original, condicion_a_probar)
+        
+        print(f"Filtrando dataset por la condición: '{condicion_a_probar}'")
+        print(f"Cantidad de estudiantes afectados de forma individual: {len(df_solo_asistencia)}")
+        print("Mostrando los primeros 3 casos encontrados:")
+        print(df_solo_asistencia[['Attendance', 'Hours_Studied', 'Exam_Score']].head(3))
+        print("\n" + "="*60 + "\n")
+        
+        # ---------------------------------------------------------------------
+        # PRUEBA 3: Invocación de 'detectar_riesgo(df)'
+        # ---------------------------------------------------------------------
+        print(" Ejecutando Función: detectar_riesgo")
+        df_con_alertas = detectar_riesgo(df_original)
+        
+        print("¡Columna 'perfil_riesgo' agregada correctamente!")
+        print("Verificación de la nueva columna en los primeros 5 registros del DataFrame:")
+        columnas_verificacion = ['Exam_Score', 'Attendance', 'Sleep_Hours', 'perfil_riesgo']
+        print(df_con_alertas[columnas_verificacion].head(5))
+        
+    except FileNotFoundError:
+        print(f"❌ ERROR: No se pudo encontrar el archivo en '{ruta_dataset}'.")
+        print("\nConsejo para que funcione en Spyder:")
+        print("Asegurate de que el 'Working Directory' (Directorio de trabajo) en la esquina")
+        print("superior derecha de Spyder sea la carpeta 'src' donde está tu archivo de código.")
