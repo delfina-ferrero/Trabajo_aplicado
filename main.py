@@ -7,11 +7,12 @@ Created on Wed Jun 10 23:25:44 2026
 """
 
 from scr.carga_datos import cargar_dataset, validar_archivo, mostrar_menu
+from estadisticas import mostrar_estadisticas, calcular_correlaciones
 from scr.graficos_variables import grafico_dispersion, grafico_exam_score
 from scr.riesgo import mostrar_reporte_riesgo
 from scr.reporte_indivual import ingresar_datos_usuario, graficar_reporte_individual
 
-RUTA_DATASET = "datos/StudentPerformanceFactors.csv"
+RUTA_DATASET = "../datos/StudentPerformanceFactors.csv"
 
 
 def main():
@@ -37,8 +38,9 @@ def main():
     while True:
         opcion = mostrar_menu()
 
-       # if opcion == 1:
-         #   mostrar_estadisticas(df)
+        if opcion == 1:
+           mostrar_estadisticas(df)
+           calcular_correlaciones(df)
 
         if opcion == 2:
             grafico_exam_score(df)
