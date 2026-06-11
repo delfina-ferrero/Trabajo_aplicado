@@ -6,13 +6,13 @@ Created on Wed Jun 10 23:25:44 2026
 @author: catalinabellomo
 """
 
-from scr.carga_datos import cargar_dataset, validar_archivo, mostrar_menu
+from scr.carga_datos import cargar_dataset, validar_archivo, mostrar_menu, mostrar_submenu
 from scr.estadisticas import mostrar_estadisticas, calcular_correlaciones
 from scr.graficos_variables import grafico_dispersion, grafico_exam_score
 from scr.riesgo import mostrar_reporte_riesgo
-from scr.reporte_indivual import ingresar_datos_usuario, graficar_reporte_individual
+from scr.reporte_indivual import ingresar_datos_usuario, graficar_reporte_individual, evaluar_riesgo_usuario
 
-RUTA_DATASET = "../datos/StudentPerformanceFactors.csv"
+RUTA_DATASET = "datos/StudentPerformanceFactors.csv"
 
 
 def main():
@@ -36,28 +36,37 @@ def main():
 
     # 3. Loop del menú
     while True:
-        opcion = mostrar_menu()
+     opcion = mostrar_menu()
 
-        if opcion == 1:
-           mostrar_estadisticas(df)
-           calcular_correlaciones(df)
+     if opcion == 1:
+          # Submenú: explorar el dataset
+          while True:
+              subopcion = mostrar_submenu()
 
-        if opcion == 2:
-            grafico_exam_score(df)
-            grafico_dispersion(df, "Hours_Studied")
-            grafico_dispersion(df, "Sleep_Hours")
-            grafico_dispersion(df, "Attendance")
+              if subopcion == 1:
+                  mostrar_estadisticas(df)
+                  calcular_correlaciones(df)
 
-        elif opcion == 3:
-            mostrar_reporte_riesgo(df)
+              elif subopcion == 2:
+                  grafico_exam_score(df)
+                  grafico_dispersion(df, "Hours_Studied")
+                  grafico_dispersion(df, "Sleep_Hours")
+                  grafico_dispersion(df, "Attendance")
 
-        elif opcion == 4:
-            usuario = ingresar_datos_usuario()
-            graficar_reporte_individual(usuario, df)
+              elif subopcion == 3:
+                  mostrar_reporte_riesgo(df)
 
-        elif opcion == 5:
-            print("\nHasta luego!")
-            break
+              elif subopcion == 4:
+                  break  # vuelve al menú principal
+
+     elif opcion == 2:
+          usuario = ingresar_datos_usuario()
+          graficar_reporte_individual(usuario, df)
+          evaluar_riesgo_usuario(usuario)
+
+     elif opcion == 3:
+          print("\nHasta luego!")
+          break
 
 
 if __name__ == "__main__":

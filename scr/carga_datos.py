@@ -66,28 +66,53 @@ def validar_archivo(df):
 def mostrar_menu():
     """
     Muestra el menú principal y pide al usuario que elija una opción.
-    Valida que la opción sea un número entre 1 y 5.
+    Valida que la opción sea un número entre 1 y 3.
  
     Retorna:
-        int entre 1 y 5 con la opción elegida.
+        int entre 1 y 3 con la opción elegida.
     """
     print("\n" + "=" * 45)
     print("   SISTEMA DE ANÁLISIS DE RENDIMIENTO")
     print("=" * 45)
-    print("  1. Ver estadísticas descriptivas")
-    print("  2. Ver dashboard de gráficos")
-    print("  3. Ver reporte de riesgo académico")
-    print("  4. Generar mi reporte individual")
-    print("  5. Salir")
+    print("  1. Explorar el dataset")
+    print("  2. Generar mi reporte individual")
+    print("  3. Salir")
     print("=" * 45)
  
     while True:
         try:
-            opcion = int(input("Elegí una opción (1-5): "))
-            if 1 <= opcion <= 5:
+            opcion = int(input("Elegí una opción (1-3): "))
+            if 1 <= opcion <= 3:
                 return opcion
             else:
-                print("Error: ingresá un número entre 1 y 5.")
+                print("Error: ingresá un número entre 1 y 3.")
         except ValueError:
             print("Error: eso no es un número válido.")
-    
+ 
+ 
+def mostrar_submenu():
+    """
+    Muestra el submenú de exploración del dataset.
+    Valida que la opción sea un número entre 1 y 4.
+ 
+    Retorna:
+        int entre 1 y 4 con la opción elegida.
+    """
+    print("\n" + "-" * 45)
+    print("   EXPLORAR EL DATASET")
+    print("-" * 45)
+    print("  1. Ver estadísticas descriptivas")
+    print("  2. Ver dashboard de gráficos")
+    print("  3. Ver reporte de riesgo académico")
+    print("  4. Volver al menú principal")
+    print("-" * 45)
+ 
+    while True:
+        try:
+            opcion = int(input("Elegí una opción (1-4): "))
+            if 1 <= opcion <= 4:
+                return opcion
+            else:
+                print("Error: ingresá un número entre 1 y 4.")
+        except ValueError:
+            print("Error: eso no es un número válido.")
