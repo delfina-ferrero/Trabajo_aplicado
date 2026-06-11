@@ -6,12 +6,10 @@ Created on Wed Jun 10 23:25:44 2026
 @author: catalinabellomo
 """
 
-from scr.carga_datos import cargar_dataset, validar_archivo, mostrar_menu
-from scr.estadisticas import mostrar_estadisticas
-from scr.graficos import mostrar_dashboard
-from scr.riesgo import mostrar_reporte_riesgo
-from scr.reporte_usuario import ingresar_datos_usuario, graficar_reporte_individual
-
+from carga_datos import cargar_dataset, validar_archivo, mostrar_menu
+from graficos import mostrar_dashboard
+from riesgo import mostrar_reporte_riesgo
+from reporte_usuario import ingresar_datos_usuario, graficar_reporte_individual
 
 RUTA_DATASET = "datos/StudentPerformanceFactors.csv"
 
@@ -39,10 +37,10 @@ def main():
     while True:
         opcion = mostrar_menu()
 
-        if opcion == 1:
-            mostrar_estadisticas(df)
+       # if opcion == 1:
+         #   mostrar_estadisticas(df)
 
-        elif opcion == 2:
+        if opcion == 2:
             mostrar_dashboard(df)
 
         elif opcion == 3:
