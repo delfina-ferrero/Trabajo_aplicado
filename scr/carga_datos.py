@@ -5,29 +5,89 @@ Created on Wed Jun  3 13:28:31 2026
 
 @author: catalinabellomo
 """
-
+import os
 import pandas as pd
-
+ 
+ 
 def cargar_dataset(ruta):
     """
-    Carga el dataset desde un archivo CSV. 
-
+    Lee el archivo CSV del dataset y lo devuelve como DataFrame.
+ 
     Parámetros:
-        ruta (str): ubicacion del archivo.
-
+        ruta (str): ruta al archivo CSV
+ 
     Retorna:
-        DataFrame: dataset cargado en pandas
+        DataFrame con los datos, o None si hubo un error.
     """
+    if not os.path.exists(ruta):
+        print(f"Error: no se encontró el archivo '{ruta}'.")
+        return None
+ 
     try:
-        datos = pd.read_csv(ruta)
-        return datos
-
-    except FileNotFoundError:
-        print("No se encontró el archivo.")
+        df = pd.read_csv(ruta)
+        print(f"Dataset cargado correctamente ({len(df)} registros).")
+        return df
+    except Exception as e:
+        print(f"Error al leer el archivo: {e}")
         return None
+ 
+ 
+def validar_archivo(df):
+    """
+    Verifica que el DataFrame tenga las columnas necesarias.
+ 
+    Parámetros:
+        df (DataFrame): dataset cargado con pandas
+ 
+    Retorna:
+        True si es válido. Lanza ValueError si falta alguna columna.
+    """
+    columnas_requeridas = [
+        "Hours_Studied",
+        "Sleep_Hours",
+        "Attendance",
+        "Motivation_Level",
+        "Tutoring_Sessions",
+        "Exam_Score"
+    ]
+ 
+    faltantes = []
+    for col in columnas_requeridas:
+        if col not in df.columns:
+            faltantes.append(col)
 
-    except Exception as error:
-        print("Error:", error)
-        return None
-    
+    if faltantes:
+        raise ValueError(f"El archivo no tiene las columnas requeridas: {faltantes}")
+
+    print("Archivo validado correctamente.")
+    return True
+ 
+ 
+def mostrar_menu():
+    """
+    Muestra el menú principal y pide al usuario que elija una opción.
+    Valida que la opción sea un número entre 1 y 5.
+ 
+    Retorna:
+        int entre 1 y 5 con la opción elegida.
+    """
+    print("\n" + "=" * 45)
+    print("   SISTEMA DE ANÁLISIS DE RENDIMIENTO")
+    print("=" * 45)
+    print("  1. Ver estadísticas descriptivas")
+    print("  2. Ver dashboard de gráficos")
+    print("  3. Ver reporte de riesgo académico")
+    print("  4. Generar mi reporte individual")
+    print("  5. Salir")
+    print("=" * 45)
+ 
+    while True:
+        try:
+            opcion = int(input("Elegí una opción (1-5): "))
+            if 1 <= opcion <= 5:
+                return opcion
+            else:
+                print("Error: ingresá un número entre 1 y 5.")
+        except ValueError:
+            print("Error: eso no es un número válido.")
     
