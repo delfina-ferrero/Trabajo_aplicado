@@ -7,7 +7,7 @@ Created on Wed Jun 10 23:25:44 2026
 """
 
 from carga_datos import cargar_dataset, validar_archivo, mostrar_menu
-from graficos import mostrar_dashboard
+from graficos_variables import mostrar_dashboard
 from riesgo import mostrar_reporte_riesgo
 from reporte_usuario import ingresar_datos_usuario, graficar_reporte_individual
 
