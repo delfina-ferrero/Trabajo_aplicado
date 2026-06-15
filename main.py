@@ -48,10 +48,39 @@ def main():
                   calcular_correlaciones(df)
 
               elif subopcion == 2:
-                  grafico_exam_score(df)
-                  grafico_dispersion(df, "Hours_Studied")
-                  grafico_dispersion(df, "Sleep_Hours")
-                  grafico_dispersion(df, "Attendance")
+                  print("\n=============================================")
+                  print("        VISUALIZACIÓN DE GRÁFICOS")
+                  print("=============================================")
+                  print("  1. Hours Studied vs Exam Score")
+                  print("  2. Sleep Hours vs Exam Score")
+                  print("  3. Attendance vs Exam Score")
+                  print("  4. Distribución de Exam Score")
+                  print("  5. Volver al menú principal")
+                  print("=============================================")
+                  grafico_a_ver = int(input("Elegi una opcion (1-5): "))
+                  
+                  if grafico_a_ver == 1:
+                      grafico_dispersion(df, "Hours_Studied")
+                      print("\n=============================================")
+                      print("Grafico de comparacion de las horas estudiadas vs el puntaje obtenido en el examen.")
+                      print("=============================================")
+                  elif grafico_a_ver == 2:
+                      grafico_dispersion(df, "Sleep_Hours")
+                      print("\n=============================================")
+                      print("Grafico comparacion de las horas de sueno vs puntaje obtenido en el examen.")
+                      print("=============================================")
+                  elif grafico_a_ver == 3:
+                      grafico_dispersion(df, "Attendance")
+                      print("\n=============================================")
+                      print("Grafico comparacion de las asistencias vs puntaje obtenido en el examen.")
+                      print("=============================================")
+                  elif grafico_a_ver == 4:
+                      grafico_exam_score(df)
+                      print("\n=============================================")
+                      print("Grafico de barras que muestra la distribucion de los puntajes obtenidos en el examen")
+                      print("=============================================")
+                  elif grafico_a_ver == 5:
+                      break
 
               elif subopcion == 3:
                   mostrar_reporte_riesgo(df)
