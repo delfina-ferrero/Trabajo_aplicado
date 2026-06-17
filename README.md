@@ -8,11 +8,15 @@
  Este sistema interactivo permite explorar datos reales de rendimiento estudiantil, visualizar patrones entre variables de hábitos y desempeño académico, detectar automáticamente perfiles de riesgo académico y generar reportes individualizados.
 
 #    Division de tareas 
-Matilda — Carga & Menú — scr/carga_datos.py + main.py
-Allegra — Estadísticas — scr/estadisticas.py
-Anita— Visualizaciones — scr/graficos_variables.py
-Delfi — Riesgo Académico — scr/riesgo.py
-Cata — Reporte Individual + Docs — scr/reporte_indivual.py + README.md
+**Matilda** — Carga & Menú — scr/carga_datos.py + main.py
+
+**Allegra** — Estadísticas — scr/estadisticas.py
+
+**Anita** — Visualizaciones — scr/graficos_variables.py
+
+**Delfi** — Riesgo Académico — scr/riesgo.py
+
+**Cata** — Reporte Individual + Docs — scr/reporte_indivual.py + README.md
 
 # 4. Descricpion de fuente de datos: 
 Dataset: StudentPerformanceFactors.csv
@@ -41,9 +45,7 @@ Registros: 6607 estudiantes
    Generar mi reporte individual → el usuario ingresa sus datos y recibe un reporte personalizado
 
 ### Modo web (Streamlit)
-   streamlit run app.py
-   Se abrirá el navegador en http://localhost:8501
-   Subir el archivo CSV desde la carpeta datos/ al uploader de la interfaz.
+  
 
 
 # 6. Librerías utilizadas:
@@ -55,6 +57,8 @@ Registros: 6607 estudiantes
 - **Streamlit** — interfaz web interactiva (app.py)
 
 # 7. Estructura del repositorio: 
+
+```
 Trabajo_aplicado/
 ├── datos/
 │   └── StudentPerformanceFactors.csv
@@ -73,6 +77,7 @@ Trabajo_aplicado/
 ├── requirements.txt
 ├── prompts_dashboard.txt
 └── README.md
+```
 
 # 8. Explicación breve de las clases implementadas: 
 no se implementan clases, nuestro programa tiene un diseno de "modulos", basado en una division de funciones y cada archivo tiene las funciones necesarias para la realizacion de cada tarea.
