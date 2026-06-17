@@ -5,4 +5,7 @@ Created on Mon Jun  1 16:24:32 2026
 
 @author: catalinabellomo
 """
+pandas
+matplotlib
+streamlit
 
