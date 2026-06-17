@@ -1,49 +1,81 @@
 
-# Trabajo_aplicado
-# 1. Titulo: Student Performance Factors
-# 2. Integrantes: Ana Piuma, Catalina Bellomo, Matilda Ivancich, Delfina Ferrero, Allegra Gegenschatz
+# Trabajo_aplicado- Sistema de Análisis de Rendimiento Estudiantil
+# 2. Integrantes, grupo 14
+ Ana Piuma, Catalina Bellomo, Matilda Ivancich, Delfina Ferrero, Allegra Gegenschatz
 # 3. Objetivo:
  Muchos estudiantes no tienen forma de ver, de manera concreta,cómo sus hábitos del día a día afectan su rendimiento académico. Variables como las horas de sueño, la cantidad de horas dedicadas al estudio, 
  el nivel de motivación o la asistencia a clases claramente influyen en los resultados, pero pocas herramientas lo muestran de forma accesible y personalizada.
  Este sistema interactivo permite explorar datos reales de rendimiento estudiantil, visualizar patrones entre variables de hábitos y desempeño académico, detectar automáticamente perfiles de riesgo académico y generar reportes individualizados.
 
-#    Division de tareas => 
-#    Allegra: Estadísticas & Análisis (estadisticas.py) Estadísticas descriptivas :Calcular y mostrar promedios, máximos y mínimos de todas las variables numéricas del dataset ; Correlaciones : Calcular correlaciones entre Hours_Studied, Sleep_Hours, Motivation y Exam_Score. Mostrar tabla interpretada con texto ; Formato de salida en consola:Que los resultados se muestren de forma clara, con separadores visuales y etiquetas legibles.
-#    Ana : Visualizaciones (graficos.py) Dashboard con 8 gráficos: Armar el dashboard con Matplotlib subplots: scatter plots y barras ; Estética y coherencia visual: Que todos los gráficos tengan títulos, ejes etiquetados, colores consistentes y se vean bien juntos en el dashboard ; Histograma de Exam_Score : Distribución general del puntaje del examen como primer gráfico del dashboard.
-#    Matilda: Coordinadora & Datos (carga_datos.py · main.py) Carga y validación del dataset: Leer el CSV con Pandas, verificar que el archivo existe y es válido, manejar el error si no se encuentra ; main.py y menú principal: Armar el main.py que llama a todos los módulos, el loop del menú principal y la lógica de navegación entre opciones ; Validación de entradas del usuario : Que el programa no se rompa con inputs inválidos.
-#    Catalina:Reporte Individual & Docs (reporte_usuario.py | README) Reporte personal del usuario:Pedir los datos del usuario, comparar cada uno con el promedio del dataset y mostrar mensaje personalizado ; Diagnóstico de riesgo individual: Aplicar la lógica de riesgo al perfil del usuario y generar un mensaje por cada variable en zona crítica ; README y documentación: Redactar el README completo según la consigna.
-#    Delfina: Riesgo Académico (riesgo.py) Detección de perfiles de riesgo : Aplicar las 5 condiciones de riesgo sobre el dataset completo y mostrar cuántos y qué porcentaje de estudiantes tiene perfil de riesgo; Filtro por condición: Permitir al usuario ver qué estudiantes fallan en cada condición específica; Reporte de riesgo en consola: Mostrar un resumen claro con cantidad de estudiantes en riesgo por cada variable, con mensaje interpretativo.
-# 4. Descricpion de fuente de datos: La fuente de datos provee una descripcion general de diversos factores que afectan el rendimiento de estudiantes ante instancias de evaluacion. Incluye informacion de habitos de estudio, asistencias a clase, partiicpacion parental y otros aspectos que influencian el exito academico. 
-# 5. Instrucciones para ejecutar el programa: Primero, clonar el repositorio ; Segundo: instalar las dependencias (requirements.txt) ; Tercero: verificar que el dataset este en la carpeta correcta (chequear que ese archivo CSV esté guardado donde el código espera encontrarlo); Cuarto : Ejecutar el programa (main.py) ; Quinto: Usar el menu interactivo al completar en consola la info solicitada.
-# 6. Librerías utilizadas: Pandas (Carga del dataset, validacion, correlaciones, filtros de riesgo y calculo de estadisticas) ; Matplotlib (dashboard y graficos del reporte individual) ; Os (verificar que estistan los archivos) ; Sys (controla la salida del programa)
+#    Division de tareas 
+Matilda — Carga & Menú — scr/carga_datos.py + main.py
+Allegra — Estadísticas — scr/estadisticas.py
+Anita— Visualizaciones — scr/graficos_variables.py
+Delfi — Riesgo Académico — scr/riesgo.py
+Cata — Reporte Individual + Docs — scr/reporte_indivual.py + README.md
+
+# 4. Descricpion de fuente de datos: 
+Dataset: StudentPerformanceFactors.csv
+Fuente: Lainguyn123. (2024). Student Performance Factors. Kaggle.
+Link: https://www.kaggle.com/datasets/lainguyn123/student-performance-factors
+Registros: 6607 estudiantes
+
+# 5. Instrucciones para ejecutar el programa: 
+##Modo consola (main.py)
+1. Clonar el repositorio
+   git clone https://github.com/tu-usuario/Trabajo_aplicado.git
+
+2. Instalar las dependencias
+   pip install -r requirements.txt
+
+3. Verificar que el dataset esté en la carpeta correcta
+   El archivo StudentPerformanceFactors.csv debe estar dentro de la carpeta datos/
+
+4. Ejecutar el programa por consola
+   cd Trabajo_aplicado
+   python main.py
+
+5. Usar el menú interactivo
+   Seguir las opciones que aparecen en consola e ingresar la información solicitada.
+   Explorar el dataset → submenú con estadísticas, gráficos y reporte de riesgo
+   Generar mi reporte individual → el usuario ingresa sus datos y recibe un reporte personalizado
+
+### Modo web (Streamlit)
+   streamlit run app.py
+   Se abrirá el navegador en http://localhost:8501
+   Subir el archivo CSV desde la carpeta datos/ al uploader de la interfaz.
 
 
-
-
-
-
-
-
-
+# 6. Librerías utilizadas:
+- **Pandas** — carga del dataset, validación, correlaciones, 
+  filtros de riesgo y cálculo de estadísticas
+- **Matplotlib** — dashboard y gráficos del reporte individual
+- **Os** — verificación de existencia de archivos y manejo de rutas
+- **Sys** — control de rutas del sistema para importar módulos
+- **Streamlit** — interfaz web interactiva (app.py)
 
 # 7. Estructura del repositorio: 
-```
-EDUTRACK/
---main.py --> menu principal
---carga_datos.py --> carga y validacion del csv
---estadisticas.py --> estadisticas descriptivas y correlaciones
---graficos.py --> graficos Matplotlib
---riesgo.py --> detecta perfiles con riesgo academico
---reporte_usuario.py --> reporte indicidual de cada usuario
---Datos:
-    --StudentPerformanceFactors.CSV --> # [COMPLETAR: confirmar ruta/carpeta real del dataset]
---Diagramas:
-    ---##DIAGRAMAS DE CADA FUNCION!!!!!!##
---requirements.txt --> librerias necesarias para que corra el codigo
---README.md --> este archivo
+Trabajo_aplicado/
+├── datos/
+│   └── StudentPerformanceFactors.csv
+├── scr/
+│   ├── __init__.py
+│   ├── carga_datos.py
+│   ├── estadisticas.py
+│   ├── graficos_variables.py
+│   ├── riesgo.py
+│   └── reporte_indivual.py
+├── docs/
+│   └── diseño.md
+├── outputs/
+├── app.py
+├── main.py
+├── requirements.txt
+├── prompts_dashboard.txt
+└── README.md
 
-```
-# 8. Explicación breve de las clases implementadas: no se implementan clases, nuestro programa tiene un diseno de "modulos", basado en una division de funciones y cada archivo tiene las funciones necesarias para la realizacion de cada tarea.
+# 8. Explicación breve de las clases implementadas: 
+no se implementan clases, nuestro programa tiene un diseno de "modulos", basado en una division de funciones y cada archivo tiene las funciones necesarias para la realizacion de cada tarea.
 # 9. Explicación breve de las funciones principales:
 ```
 carga_datos.py 
