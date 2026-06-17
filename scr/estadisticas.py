@@ -35,7 +35,7 @@ def mostrar_estadisticas(df):
         print(f"  {col:<22} prom: {promedio:>6.2f}   máx: {maximo:>3.0f}   mín: {minimo:>3.0f}")
 
     print("=" * 55)
-    input("\nPresioná Enter para volver al menú principal...")
+    input("\nPresioná Enter para ver las correlaciones Pearson...")
 
     
 def calcular_correlaciones(df):
