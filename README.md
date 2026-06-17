@@ -1,9 +1,12 @@
-# Trabajo_aplicado
 
 # Trabajo_aplicado
 # 1. Titulo: Student Performance Factors
 # 2. Integrantes: Ana Piuma, Catalina Bellomo, Matilda Ivancich, Delfina Ferrero, Allegra Gegenschatz
-# 3. Objetivo: Construir un sistema interactivo donde los usuarios pueden explorar datos reales de rendimiento estudiantil, visualizar patrones en esas variables, detectar perfiles de riesgo acad'emico y generar reportes individualizados que ayuden a la toma de decisiones de la rutina.  
+# 3. Objetivo:
+ Muchos estudiantes no tienen forma de ver, de manera concreta,cómo sus hábitos del día a día afectan su rendimiento académico. Variables como las horas de sueño, la cantidad de horas dedicadas al estudio, 
+ el nivel de motivación o la asistencia a clases claramente influyen en los resultados, pero pocas herramientas lo muestran de forma accesible y personalizada.
+ Este sistema interactivo permite explorar datos reales de rendimiento estudiantil, visualizar patrones entre variables de hábitos y desempeño académico, detectar automáticamente perfiles de riesgo académico y generar reportes individualizados.
+
 #    Division de tareas => 
 #    Allegra: Estadísticas & Análisis (estadisticas.py) Estadísticas descriptivas :Calcular y mostrar promedios, máximos y mínimos de todas las variables numéricas del dataset ; Correlaciones : Calcular correlaciones entre Hours_Studied, Sleep_Hours, Motivation y Exam_Score. Mostrar tabla interpretada con texto ; Formato de salida en consola:Que los resultados se muestren de forma clara, con separadores visuales y etiquetas legibles.
 #    Ana : Visualizaciones (graficos.py) Dashboard con 8 gráficos: Armar el dashboard con Matplotlib subplots: scatter plots y barras ; Estética y coherencia visual: Que todos los gráficos tengan títulos, ejes etiquetados, colores consistentes y se vean bien juntos en el dashboard ; Histograma de Exam_Score : Distribución general del puntaje del examen como primer gráfico del dashboard.
@@ -13,6 +16,15 @@
 # 4. Descricpion de fuente de datos: La fuente de datos provee una descripcion general de diversos factores que afectan el rendimiento de estudiantes ante instancias de evaluacion. Incluye informacion de habitos de estudio, asistencias a clase, partiicpacion parental y otros aspectos que influencian el exito academico. 
 # 5. Instrucciones para ejecutar el programa: Primero, clonar el repositorio ; Segundo: instalar las dependencias (requirements.txt) ; Tercero: verificar que el dataset este en la carpeta correcta (chequear que ese archivo CSV esté guardado donde el código espera encontrarlo); Cuarto : Ejecutar el programa (main.py) ; Quinto: Usar el menu interactivo al completar en consola la info solicitada.
 # 6. Librerías utilizadas: Pandas (Carga del dataset, validacion, correlaciones, filtros de riesgo y calculo de estadisticas) ; Matplotlib (dashboard y graficos del reporte individual) ; Os (verificar que estistan los archivos) ; Sys (controla la salida del programa)
+
+
+
+
+
+
+
+
+
 
 # 7. Estructura del repositorio: 
 ```
