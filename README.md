@@ -25,28 +25,44 @@ Link: https://www.kaggle.com/datasets/lainguyn123/student-performance-factors
 Registros: 6607 estudiantes
 
 # 5. Instrucciones para ejecutar el programa: 
-##Modo consola (main.py)
-1. Clonar el repositorio
-   git clone https://github.com/tu-usuario/Trabajo_aplicado.git
+#Modo consola (main.py)
 
-2. Instalar las dependencias
-   pip install -r requirements.txt
+1.Clonar el repositorio
+git clone https://github.com/tu-usuario/Trabajo_aplicado.git
 
-3. Verificar que el dataset esté en la carpeta correcta
-   El archivo StudentPerformanceFactors.csv debe estar dentro de la carpeta datos/
 
-4. Ejecutar el programa por consola
-   cd Trabajo_aplicado
-   python main.py
+2.Instalar las dependencias
+pip install -r requirements.txt
 
-5. Usar el menú interactivo
-   Seguir las opciones que aparecen en consola e ingresar la información solicitada.
-   Explorar el dataset → submenú con estadísticas, gráficos y reporte de riesgo
-   Generar mi reporte individual → el usuario ingresa sus datos y recibe un reporte personalizado
 
-### Modo web (Streamlit)
-  
+3.Verificar que el dataset esté en la carpeta correcta
+El archivo StudentPerformanceFactors.csv debe estar dentro de la carpeta datos/
 
+4.Ejecutar el programa desde el main.py
+
+5.Usar el menú interactivo
+Seguir las opciones que aparecen en consola e ingresar la información solicitada:
+
+Opción 1 — Explorar el dataset → submenú con estadísticas, gráficos y reporte de riesgo
+Opción 2 — Generar mi reporte individual → ingresás tus datos y recibís un reporte personalizado
+Opción 3 — Salir
+
+##Modo web (Streamlit)
+1.Clonar el repositorio
+git clone https://github.com/tu-usuario/Trabajo_aplicado.git
+
+
+2.Entrar a la carpeta
+cd Trabajo_aplicado
+
+3.Instalar las dependencias
+pip install -r requirements.txt
+
+4.Correr la interfaz web
+streamlit run app.py
+
+5.Se abrirá automáticamente el navegador 
+Arrastrá el archivo StudentPerformanceFactors.csv desde la carpeta datos/ al uploader de la interfaz y comenzá a explorar.
 
 # 6. Librerías utilizadas:
 - **Pandas** — carga del dataset, validación, correlaciones, 
