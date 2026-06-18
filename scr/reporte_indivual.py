@@ -227,6 +227,8 @@ def graficar_reporte_individual(usuario, df):
     axes[2].legend()
 # ajusta automáticamente los espacios para que no se pisen los títulos
     plt.tight_layout()
+# guarda el gráfico en la carpeta outputs
+    plt.savefig("../outputs/reporte_individual.png")
 # muestra la ventana con los tres gráficos
     plt.show()
 
