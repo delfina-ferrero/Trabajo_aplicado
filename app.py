@@ -32,31 +32,39 @@ st.markdown("Grupo 14 — Matilda Ivancich · Allegra Gegenschatz · Ana Piuma �
 st.divider()
 
 # ── 1. CARGA DEL ARCHIVO ─────────────────────────────────────────────────────
-st.header("1. Cargá el dataset")
+# ── 1. CARGA DEL ARCHIVO ─────────────────────────────────────────────────────
+RUTA_DATASET = "datos/StudentPerformanceFactors.csv"  # ← ajustá la ruta a donde está tu CSV
 
-archivo = st.file_uploader(
-    "Arrastrá el archivo CSV o hacé click para buscarlo",
-    type=["csv"]
-)
-
-if archivo is None:
-    st.info("Esperando el archivo CSV para comenzar el análisis.")
+try:
+    df = pd.read_csv(RUTA_DATASET)
+    validar_archivo(df)
+    st.success(f"Dataset cargado correctamente — {len(df)} registros.")
+except ValueError as e:
+    st.error(f"Error de validación: {e}")
+    st.stop()
+except FileNotFoundError:
+    st.error(f"No se encontró el archivo en: {RUTA_DATASET}")
+    st.stop()
+except Exception as e:
+    st.error(f"No se pudo leer el archivo: {e}")
     st.stop()
 
 # ── 2. VALIDACIÓN DEFENSIVA ──────────────────────────────────────────────────
 try:
-    df = pd.read_csv(archivo)
+    df = pd.read_csv(RUTA_DATASET)
     validar_archivo(df)
     st.success(f"Archivo cargado y validado correctamente — {len(df)} registros.")
 except ValueError as e:
     st.error(f"Error de validación: {e}")
+    st.stop()
+except FileNotFoundError:
+    st.error(f"No se encontró el archivo en: {RUTA_DATASET}")
     st.stop()
 except Exception as e:
     st.error(f"No se pudo leer el archivo: {e}")
     st.stop()
 
 st.divider()
-
 # ── 3. KPIs ──────────────────────────────────────────────────────────────────
 st.header("2. Indicadores clave")
 
