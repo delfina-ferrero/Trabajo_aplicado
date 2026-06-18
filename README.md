@@ -113,6 +113,15 @@ streamlit run app.py
 Trabajo_aplicado/
 ├── datos/
 │   └── StudentPerformanceFactors.csv
+├── docs/
+│   ├── Diagramas de graficos/
+│   ├── Diagramas de reporte_individual/
+│   ├── Diagramas de riesgo/
+│   ├── Diagramas de carga_datos/
+│   ├── Diagramas de estadisticas/
+│   ├── Diagrama del programa.png
+│   └── Diagrama del main.png
+├── outputs/
 ├── scr/
 │   ├── __init__.py
 │   ├── carga_datos.py
@@ -120,13 +129,9 @@ Trabajo_aplicado/
 │   ├── graficos_variables.py
 │   ├── riesgo.py
 │   └── reporte_indivual.py
-├── docs/
-│   └── diseño.md
-├── outputs/
 ├── app.py
 ├── main.py
 ├── requirements.txt
-├── prompts_dashboard.txt
 └── README.md
 ```
 
