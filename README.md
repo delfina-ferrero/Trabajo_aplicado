@@ -92,8 +92,7 @@ pip install -r requirements.txt
 streamlit run app.py
 ```
 
-5. Se abrirá automáticamente el navegador.
-   Arrastrá el archivo StudentPerformanceFactors.csv desde la carpeta datos/ al uploader de la interfaz y comenzá a explorar.
+5. Se abrirá automáticamente el navegador comenzá a explorar.
 
 ---
 
