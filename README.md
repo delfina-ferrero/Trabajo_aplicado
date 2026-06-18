@@ -108,7 +108,9 @@ streamlit run app.py
 
 ## 7. Estructura del repositorio
 
-```plaintext
+## Estructura del proyecto
+
+```
 Trabajo_aplicado/
 ├── datos/
 │   └── StudentPerformanceFactors.csv
@@ -119,8 +121,13 @@ Trabajo_aplicado/
 │   ├── Diagramas de carga_datos/
 │   ├── Diagramas de estadisticas/
 │   ├── Diagrama del programa.png
-│   └── Diagrama del main.png
+│   ├── Diagrama del main.png
+│   ├── archivo_de_diseño.docx
+│   └── prompts.txt
 ├── outputs/
+│   ├── grafico_dispersion.png
+│   ├── grafico_exam_score.png
+│   └── grafico_reporte_individual.png
 ├── scr/
 │   ├── __init__.py
 │   ├── carga_datos.py
@@ -133,8 +140,6 @@ Trabajo_aplicado/
 ├── requirements.txt
 └── README.md
 ```
-
----
 
 ## 8. Explicación breve de las clases implementadas
 
