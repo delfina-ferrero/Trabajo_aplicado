@@ -36,6 +36,7 @@ def grafico_dispersion(df, variable):
     plt.title(f"{variable} vs Exam_Score")
 
     plt.grid(True)
+    plt.savefig("Outputs/grafico_dispersion.png")
     plt.show()
     
 def grafico_exam_score(df):
@@ -68,6 +69,7 @@ def grafico_exam_score(df):
     plt.title("Distribución de Exam_Score")
 
     plt.grid(axis="y")
-    plt.savefig("outputs/distribucion_exam_score.png")
+    plt.savefig("Outputs/grafico_exam_score.png")
     plt.show()
+    
     
