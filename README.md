@@ -225,7 +225,19 @@ Este proyecto utilizó Inteligencia Artificial (Gemini y Claude) como herramient
 
 En todos los casos el código generado fue revisado, probado y ajustado por las integrantes del grupo. La IA ayudó como asistente del código, pero las decisiones sobre cómo organizar el sistema, qué funciones hacer y cómo probarlo las tomamos nosotras.
 
----
+Seguimos la estructura de documento de diseño → prompt → código. Antes de pedirle código a la IA, cada integrante preparó un documento de 
+diseño con los siguientes componentes:
+
+1. Objetivo del programa
+2. Inputs
+3. Outputs
+4. Procesos principales
+5. Estructuras de datos
+6. Módulos / funciones
+7. Errores posibles
+8. Criterios de calidad
+El documento de diseño se encuentra en la carpeta `/docs`.  
+Los prompts utilizados por cada integrante están documentados en `/docs'
 
 ## 13. Notas adicionales
 

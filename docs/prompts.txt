@@ -1,0 +1,58 @@
+﻿Prompt inicial (compartido por el grupo)
+Sos un asistente de programación en Python para estudiantes universitarias. Voy a trabajar en un trabajo práctico grupal llamado Sistema de Análisis de Rendimiento Estudiantil.
+El sistema es interactivo por consola y analiza datos del dataset "Student Performance Factors" de Kaggle (6.607 registros, 20 columnas).
+Librerías: Python, Pandas, Matplotlib.
+El proyecto tiene estos módulos:
+* carga_datos.py: carga y valida el CSV
+* estadisticas.py: estadísticas descriptivas y correlaciones
+* reporte_usuario.py: ingreso de datos del usuario y comparación
+* main(): función principal que integra todo
+Trabajamos en Spyder. Voy a hacerte preguntas sobre mi módulo específico. Por favor explicá el código paso a paso, de forma clara, sin sobre-complicarlo.
+Prompts por integrante
+Matilda — carga_datos.py y main()
+Prompt 1 — carga_datos()
+Hola, te voy a dar la consigna general de un trabajo que tengo que hacer de programación y cómo dividimos con mi grupo qué tarea le toca a cada una. Nos dejan usar IA como una herramienta, no para que me resuelvas todo. A mí me toca hacer la función carga_datos(), donde tengo que leer el archivo CSV del dataset de Kaggle, verificar que sea válido y dejarlo listo para que el resto de los módulos puedan usarlo. Te pido que hagas el código lo más básico posible, no soy una programadora muy pro.
+Prompt 2 — main()
+Más adelante me toca hacer la función main(). Para resolverla necesito que mis compañeras terminen su parte, ya que esta función engloba todo el trabajo. Una vez que esté todo hecho, te voy consultando con respecto a esta función.
+Allegra — estadisticas.py
+Prompt 1 — mostrar_estadisticas(df)
+Con todo el contexto que te di, actuá como si fueras un profesor de programación. Mi rol es hacer tres funciones: mostrar_estadisticas(df), calcular_correlaciones(df) y formatear_tabla(datos). Quisiera comenzar por mostrar_estadisticas(df), que calculará y mostrará promedios, máximos y mínimos de todas las variables numéricas del dataset. ¿Me ayudás a armarla? Vamos paso a paso, explicá cada parte y la lógica detrás del código.
+Prompt 2 — calcular_correlaciones(df)
+Sigamos con la función calcular_correlaciones(df), que debe calcular correlaciones entre Hours_Studied, Sleep_Hours y Exam_Score, y mostrar una tabla interpretada con texto ("alta correlación positiva", etc.).
+Prompt 3 — formatear_tabla(datos)
+Sigamos a la última función: formatear_tabla(datos), cuya función es que los resultados se muestren de forma clara, con separadores visuales y etiquetas legibles.
+Cata — reporte_usuario.py y app_.py
+Prompt 1 — ingresar_datos_usuario()
+Mi módulo es reporte_usuario.py. Mi responsabilidad es el reporte individual del usuario. Necesito la función ingresar_datos_usuario() que le pida al usuario 6 datos con validación:
+* Hours_Studied: decimal entre 1 y 44
+* Sleep_Hours: decimal entre 4 y 10
+* Attendance: decimal entre 0 y 100
+* Motivation_Level: texto, solo acepta "Low", "Medium" o "High"
+* Tutoring_Sessions: entero entre 0 y 8
+* Exam_Score: decimal entre 55 y 100
+Cada campo usa while True + try/except para que el programa no se rompa con entradas inválidas. La función retorna un diccionario con los 6 valores. Explicá cada parte.
+Prompt 2 — comparar_con_dataset(usuario, df)
+Ahora necesito la función comparar_con_dataset(usuario, df). Debe comparar cada valor del usuario contra el dataset: para variables numéricas usar df.mean(), para Motivation_Level usar df.mode(). Por cada variable guardar el valor del usuario, el promedio/moda del dataset y un estado: "arriba" o "abajo". Retorna un diccionario con esa información. Explicá cómo funcionan df.mean() y df.mode().
+Prompt 3 — graficar_reporte_individual(usuario, df)
+Ahora necesito la función graficar_reporte_individual(usuario, df) con Matplotlib. Debe generar una figura con 3 subplots:
+1. Barras verticales: usuario vs promedio del dataset para cada variable numérica
+2. Scatter de Hours_Studied vs Exam_Score con todos los datos, y el punto del usuario en rojo con etiqueta
+3. Scatter de Sleep_Hours vs Exam_Score, igual al anterior
+Usá plt.subplots() y explicá cómo funciona cada subplot.
+Prompt 4 — evaluar_riesgo_usuario(usuario)
+Necesito la función evaluar_riesgo_usuario(usuario) que evalúe si el usuario tiene "perfil de riesgo" si cumple al menos 2 de estas 5 condiciones:
+* Exam_Score < 65
+* Sleep_Hours < 6
+* Hours_Studied < 16
+* Attendance < 70
+* Motivation_Level == "Low"
+La función debe verificar cada condición, mostrar en consola cuáles se cumplen, indicar si el usuario está o no en perfil de riesgo, y retornar True o False. Hacelo claro y fácil de leer.
+Prompt 5 — Interfaz web con Streamlit 
+Sos un asistente de programación en Python. Tengo un trabajo práctico llamado Sistema de Análisis de Rendimiento Estudiantil que ya funciona por consola. Ahora quiero convertirlo en una interfaz web usando Streamlit. Ya tengo todos los módulos terminados. Quiero hacer un archivo app.py que tenga: título y descripción del sistema, menú o secciones para navegar, formulario para ingresar datos, resultados de comparación y riesgo en pantalla, y gráficos con st.pyplot(). Empezá por la estructura base y el formulario. Explicá cada parte. Hacelo simple, es mi primer contacto con Streamlit.
+Prompt para cuando algo no funciona (compartido por el grupo)
+Tengo un error en mi función [nombre de la función] del módulo [nombre del módulo] del Sistema de Análisis de Rendimiento Estudiantil.
+Este es el error que me aparece:
+[pegá el mensaje de error aquí]
+Y este es mi código:
+python
+[pegá tu código aquí]
