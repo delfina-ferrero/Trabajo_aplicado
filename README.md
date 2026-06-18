@@ -130,8 +130,8 @@ FALTAAAA
 
 CORROBORAR QUE ESTEN ESTOS DIAGRAMAS SEPARADOS ASI 
 
-# 11. Diagramas de diseño. Los diagramas de flujo de cada función principal se encuentran en la carpeta `Diagramas/`, organizados por módulo:
-#     -cargar_datos2.py: `cargar_dataset(ruta)`, `validar_archivo(df)`
+# 11. Diagramas de diseño. Los diagramas de flujo de cada función principal se encuentran en la carpeta `Diagramas/`, organizados por módulo: en los siguientes archivos:
+#     -cargar_datos.py: `cargar_dataset(ruta)`, `validar_archivo(df)` #poner el formato del archivo, .png...
 #     -main.py : 'mostrar_menu()' , '_modulo_no_disponible(nombre)', '_pedir_opcion()', 'main()'
 #     -reporte_individual.py : 'graficar_reporte_individual(usuario, df)', 'comparar_con_dataset(usuario, df)', 'ingresar_datos_usuario()'
 #     -riesgo.py :'detectar_riesgo(df)', 'evaluar_condicion(df, condicion)', 'mostrar_reporte_riesgo(df)'
