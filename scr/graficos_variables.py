@@ -7,6 +7,8 @@ Created on Thu Jun  4 14:58:45 2026
 """
 
 import matplotlib.pyplot as plt
+import os
+print(os.getcwd())
 
 
 def grafico_dispersion(df, variable):
@@ -34,7 +36,6 @@ def grafico_dispersion(df, variable):
     plt.title(f"{variable} vs Exam_Score")
 
     plt.grid(True)
-    plt.savefig(f"outputs/dispersion_{variable}.png")
     plt.show()
     
 def grafico_exam_score(df):
