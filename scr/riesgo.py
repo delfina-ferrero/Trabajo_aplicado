@@ -46,7 +46,6 @@ def detectar_riesgo(df):
     Retorna:
     - DataFrame: El mismo DataFrame con la columna 'perfil_riesgo' (True/False).
     """
-    # Creamos una copia para evitar advertencias de asignación (SettingWithCopyWarning)
     df_resultado = df.copy()
     
     # Calculamos series booleanas para cada una de las 5 condiciones de riesgo
@@ -56,7 +55,6 @@ def detectar_riesgo(df):
     c4 = df_resultado['Attendance'] < 70
     c5 = df_resultado['Motivation_Level'].str.strip() == 'Low'
     
-    # Sumamos las condiciones (True se cuenta como 1, False como 0) fila por fila de manera eficiente
     cantidad_condiciones = c1.astype(int) + c2.astype(int) + c3.astype(int) + c4.astype(int) + c5.astype(int)
     
     # Un estudiante entra en riesgo si cumple al menos 2 de estas condiciones
