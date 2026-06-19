@@ -220,7 +220,7 @@ Los diagramas de flujo del programa y de cada módulo se encuentran en la carpet
 
 ## 12. Declaración de uso de IA
 
-Este proyecto utilizó Inteligencia Artificial (Gemini y Claude) como herramienta de asistencia durante el desarrollo. El uso incluyó:
+Este proyecto utilizó Inteligencia Artificial como herramienta de asistencia durante el desarrollo. El uso incluyó:
 
 - Generación de código inicial para cada módulo a partir del documento de diseño
 - Ayuda para resolver errores: cuando algo fallaba le preguntábamos cómo resolverlo
@@ -256,6 +256,7 @@ Los prompts utilizados por cada integrante están documentados en `/docs'
 import os
 os.chdir("/ruta/a/Trabajo_aplicado")
 ```
+- Chequear la ruta en el main.py que sea correcta 
 
 - Para el modo Streamlit, el programa debe correrse siempre desde la carpeta raíz Trabajo_aplicado/ y no desde dentro de scr/.
 
